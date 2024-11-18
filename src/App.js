@@ -23,7 +23,7 @@ const App = () => {
       return;
     }
 
-    const MAX_FILE_SIZE = 10 * 1024 * 1024;
+    const MAX_FILE_SIZE = 5 * 1024 * 1024;
     if (file.size > MAX_FILE_SIZE) {
       toast.error('Oops, this file is too big or not supported! Please try again!',
         {
@@ -43,7 +43,15 @@ const App = () => {
       
       return;
     }
-
+ if (text.length > 500) {
+      toast.error('Oops, this text is too big! Please try again!',
+        {
+          position: 'top-right',
+          duration: 2000, 
+        }
+      );
+      return;
+    }
     // Start loading state
     setIsLoading(true);
 
