@@ -52,7 +52,7 @@ const App = () => {
     formData.append('text', text);
 
     try {
-      const response = await axios.post('http://localhost:3001/upload', formData, {
+      const response = await axios.post('https://voice-backend-production.up.railway.app/upload', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
